@@ -1,0 +1,26 @@
+SET DATA_PATH=C:\Users\iustin.sirbu\Documents\IUSTIN\DoinaData
+python myTrain.py ^
+--mu 7 ^
+--k-img 6126 ^
+--dropout 0.2 ^
+--optimizer adam ^
+--scheduler plateau ^
+--my_format multimodal ^
+--model mmbt ^
+--unlabeled_dataset unlabeled_eda ^
+--unbalanced ^
+--batch-size 1 ^
+--gradient_accumulation_steps 20 ^
+--epochs 50 ^
+--dataset CrisisMMD ^
+--task humanitarian_orig ^
+--lr 1e-5 ^
+--threshold 0.7 ^
+--use-ema ^
+--text_hard_aug "eda_01" ^
+--linear_lu ^
+--distil unlabeled ^
+--lambda-u 100 ^
+--data_path "%DATA_PATH%\data_splits" ^
+--img_path "%DATA_PATH%" ^
+--out "%DATA_PATH%\results\humanitarian_lu+2_mu7_n+eda01"
